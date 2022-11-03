@@ -1,8 +1,7 @@
 const express = require("express"); // importing express
-const apiRouter = require("./notesRouter");
-
-const app = express();
-app.use("/", apiRouter);
+const apiRouter = express.Router();
+const fs = require("fs");
+const path = require("path");
 
 apiRouter.get("/api/notes", (req, res) => {
   const dataNotes = fs.readFileSync(

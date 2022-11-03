@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 // we parse here incoming JSON data
 app.use(express.json());
 // Static Middleware
-app.use(express.static("./develop/public"));
+app.use(express.static("./public"));
+app.use(require("./routes/apiRouter"));
+app.use(require("./routes/notesRouter"));
 
 // app.get("/notes", (req, res) => {
 // req is request and res is response
