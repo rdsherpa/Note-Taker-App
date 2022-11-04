@@ -1,32 +1,32 @@
 const express = require("express"); // importing express
 const apiRouter = express.Router();
-const fs = require("fs");
-const path = require("path");
+const storage = require("../db/storage");
 
-apiRouter.get("/api/notes", (req, res) => {
-  const dataNotes = fs.readFileSync(
-    path.join(__dirname, "./db/db.json"),
-    "utf-8"
-  );
-  const parseNotes = JSON.parse(dataNotes);
-  res.json(parseNotes);
+apiRouter.get("/notes", (req, res) => {
+  storage
+    .getNotes()
+    .then((notes) => {
+      return res.json(notes);
+    })
+    .catch((err) => res.status(500).json(err));
 });
 
-apiRouter.post("/api/notes", (req, res) => {
-  const dataNotes = fs.readFileSync(
-    path.join(__dirname, "./db/db.json"),
-    "utf-8"
-  );
-  const parseNotes = JSON.parse(dataNotes);
-  req.body.id = uuid();
-  parseNotes.push(req.body);
+apiRouter.post("/notes", (req, res) => {
+  storage
+    .addNote()
+    .then((notes) => {
+      res.json(notes);
+    })
+    .catch((err) => res.status(500).json(err));
+});
 
-  fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
-    JSON.stringify(parseNotes),
-    "utf-8"
-  );
-  res.json("You were successful in creating a note!");
+apiRouter.delete("/notes/:id", (req, res) => {
+  storage
+    .removeNote(req.params.id)
+    .then((notes) => {
+      res.json({ ok: true });
+    })
+    .catch((err) => res.status(500).json(err));
 });
 
 module.exports = apiRouter;

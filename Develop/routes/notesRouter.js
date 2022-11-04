@@ -8,8 +8,8 @@ notesRouter.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/notes.html")); // __dirname is a variable that returns the folder path of current JavaScript
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+notesRouter.get(" ", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 module.exports = notesRouter;
