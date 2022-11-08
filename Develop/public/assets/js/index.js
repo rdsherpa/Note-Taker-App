@@ -71,6 +71,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+  console.log(newNote);
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -179,5 +180,7 @@ if (window.location.pathname === "/notes") {
   noteTitle.addEventListener("keyup", handleRenderSaveBtn);
   noteText.addEventListener("keyup", handleRenderSaveBtn);
 }
+
+// console.log(note);
 
 getAndRenderNotes();
