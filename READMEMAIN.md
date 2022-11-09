@@ -15,7 +15,12 @@ Note take app here helps you to write and save notes. It uses Express.js which w
   The Note app that I have built solves ample of problems for instance: If you have a list of things or plans for your week and even future, my note app would help you to jot everything down and save them in a local folder. You can also delete if you don't need the note or finished working on that note.
 
 - What did you learn?
-  With the help of this project I learned how to work with express and install different npm commands. I was able to get the concept of get, post and delete method and run api local host in a server like Insominia.
+With the help of this project I learned how to work with express and install different npm commands. I was able to get the concept of get, post and delete method and run api local host in a server like Insominia.
+<!--
+
+## Screen shot of my Note-Taker-App
+
+![alt text](/Screen%20Shot%202022-09-21%20at%208.31.32%20PM.png) -->
 
 ## Table of Contents (Optional)
 
@@ -56,6 +61,6 @@ Heroku
 
 User name for my Github is rdsherpa, which can be found on this link:https://github.com/rdsherpa/Note-Taker-App.
 
-The project can be accessed via Heroku using the following link:
+The project can be accessed via Heroku using the following link: https://dashboard.heroku.com/apps
 
 You can also email me at sherpariwa@gmail.com if you have any further questions.
