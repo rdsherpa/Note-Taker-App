@@ -13,7 +13,7 @@ apiRouter.get("/notes", (req, res) => {
 
 apiRouter.post("/notes", (req, res) => {
   storage
-    .addNote()
+    .addNote(req.body)
     .then((notes) => {
       res.json(notes);
     })
